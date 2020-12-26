@@ -23,6 +23,9 @@ jobs:
         with:
           java-version: 1.11
           java-package: jdk
+
+      - name: Test with Maven
+        run: mvn --batch-mode --update-snapshots test
           
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -35,9 +38,5 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
       
-      - name: Build with Maven
+      - name: Build with Maven and send image to ECR
         run: mvn compile jib:build
-          
-      
-      - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots test
