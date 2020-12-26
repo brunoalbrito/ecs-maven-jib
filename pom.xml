@@ -46,7 +46,8 @@
 						<image>amazoncorretto:11-alpine</image>
 					</from>
 					<to>
-						<image>${project.artifactId}:${project.version}</image>
+						<image>102716851056.dkr.ecr.us-east-1.amazonaws.com/ecs-jib-maven</image>
+						<tags>${project.artifactId}-${project.version}</tags>
 					</to>
 				</configuration>
 			</plugin>
